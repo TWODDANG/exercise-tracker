@@ -1,0 +1,23 @@
+{
+  "name": "coinfit_project",
+  "version": "1.0.0",
+  "description": "my first coinfit project",
+  "engines": {
+    "node": "10.15.1",
+    "npm":"6.4.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "nodemon server/index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "(cd client && npm install --only=dev && npm run build) && (cd server && npm install)"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0"
+  }
+}

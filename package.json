@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "cd server && PORT=5000 npm start",
     "server": "nodemon server/index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",

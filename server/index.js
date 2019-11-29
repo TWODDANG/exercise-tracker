@@ -28,19 +28,21 @@ const usersRouter = require('./routes/users');
 
 
 
-//app.use(express.json());
+//서버 순서가 제일 중요하다....!!!!!!!
+// 1) 먼저 api 정해준다. => server api 지정해주고
+
 app.use('/api/users', usersRouter);
 app.use('/api/exercises', exercisesRouter);
 
+
+/// 2) 남은 요청들을 react, frontend로 넘겨준다!
 if(process.env.NODE_ENV === 'production'){
     const path = require('path');
     app.use(express.static(path.join('client/build')));
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client', 'build','index.html'));
     });
-    // const staticFiles = express.static(path.join(__dirname, '../../client/build'));
-    // app.use(staticFiles);
-    // app.get('/*', staticFiles)
+
 }
 
 

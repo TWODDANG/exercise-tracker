@@ -12,7 +12,7 @@ const Exercise = props => (
         <td>{props.exercise.duration}</td>
         <td>{props.exercise.date.substring(0,10)}</td>
         <td>
-            <Link to={'/edit/' + props.exercise._id} >edit </Link>
+            <Link to={'/edit/' + props.exercise._id} >edit </Link> | <a href="#" onClick={()=>{props.deleteExercise(props.exercise._id)}}>delete</a>
         </td>
         <td> 이것도 안들어강ㅆ는다고??</td>
     </tr>

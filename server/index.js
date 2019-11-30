@@ -28,8 +28,8 @@ const usersRouter = require('./routes/users');
 
 
 
-//서버 순서가 제일 중요하다....!!!!!!!
-// 1) 먼저 api 정해준다. => server api 지정해주고
+//라우터 서버 순서가 제일 중요하다....!!!!!!!
+// 1) 먼저 서버쪽 api 정해준다. => server api 지정해주고
 
 app.use('/api/users', usersRouter);
 app.use('/api/exercises', exercisesRouter);

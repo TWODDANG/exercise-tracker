@@ -43,17 +43,6 @@ export default class ExercisesList extends Component {
         })
     }
 
-    // exerciseList (){
-    //     if(this.state.exercises) {
-    //         return this.state.exercises.map(currentexercise => {
-    //             return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>
-    //         })
-    //     } else {
-    //         return <div>hihihi</div>
-    //     }
-    //
-    // }
-
 
     render(){
         return (
@@ -70,7 +59,6 @@ export default class ExercisesList extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {console.log(this.state.exercises)}
                     { this.state.exercises.map(currentexercise => {
                         return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>
                     }) }
